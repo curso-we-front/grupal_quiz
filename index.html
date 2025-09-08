@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trivial por Turnos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-indigo-900 to-slate-900 text-slate-100 flex flex-col">
+
+  <!-- Dado arriba, tipo marcador -->
+  <header class="w-full bg-slate-800/80 p-4 flex flex-col items-center shadow-lg border-b-2 border-indigo-400">
+    <div class="text-xl font-semibold mb-2">Turno de: <span id="jugador">Jugador 1</span></div>
+
+    <!-- Marcador grande del dado -->
+    <div class="flex gap-4 items-center">
+
+    <!-- Botón de tirar dado -->
+    <button id="btn-dado" class="px-8 py-4 text-2xl font-bold rounded-3xl bg-gradient-to-r from-indigo-500 to-sky-400 text-slate-900 hover:scale-105 active:translate-y-px transition-all shadow-lg h-16 flex items-center justify-center">
+      Tirar dado
+    </button>
+
+        <div id="marcador-dado" class="text-6xl font-bold w-28 h-28 flex items-center justify-center rounded-full bg-indigo-600/80 shadow-lg mb-2">
+      🎲
+    </div>
+    </div>
+  </header>
+
+  <!-- Contenedor central para el quiz -->
+  <main class="flex-1 flex items-center justify-center p-4">
+    <section id="quiz-container" class="space-y-6 w-full max-w-xl flex-col items-center">
+
+      <!-- Temática del turno -->
+      <div id="tematica" class="text-center text-2xl font-bold text-indigo-300"></div>
+
+      <!-- Cuadro principal del quiz, centrado -->
+      <div class="bg-slate-800/60 border border-slate-700 rounded-3xl p-8 shadow-xl w-full text-center">
+        <!-- Pregunta -->
+        <div id="pregunta" class="text-lg font-semibold mb-6"></div>
+
+        <!-- Opciones -->
+        <div id="opciones" class="grid grid-cols-2 gap-4 mb-6">
+        <!-- Ejemplo boton de opciones -->
+        <!-- <button class="opcion px-4 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 transition">Opción 1</button> -->
+        
+        </div>
+
+        <!-- Feedback -->
+        <div id="feedback" class="hidden p-4 rounded-xl bg-slate-900/80 text-slate-200 mb-6"></div>
+
+        <!-- Puntaje -->
+        <div id="puntaje" class="text-slate-400 font-mono mb-6"></div>
+
+        <!-- Botón siguiente -->
+        <div class="flex justify-center">
+          <button id="btn-siguiente" class="px-6 py-3 font-semibold rounded-xl bg-gradient-to-r from-sky-400 to-indigo-400 text-slate-900 hover:opacity-95 active:translate-y-px">
+            Siguiente
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="trivial-turnos.js"></script>
+</body>
+</html>
